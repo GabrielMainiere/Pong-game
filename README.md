@@ -13,7 +13,7 @@ This is a classic Pong game developed using **Godot Engine**. The goal of the ga
 ## Requirements:
 
 - **Godot Engine 3.6** or higher.
-- Operating system compatible with Godot (Windows, macOS, Linux).
+- Operating system compatible with Godot (Windows).
 
 ## Controls:
 
