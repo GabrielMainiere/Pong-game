@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://files-godot-project/assets-do-curso-pong-na-godot-4-main/arquivos/assets/sprites/campo-roxo.png" type="Texture" id=1]
+[ext_resource path="res://files-godot-project/assets-do-curso-pong-na-godot-4-main/arquivos/assets/sprites/jogador.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ball/Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game_manager/GameManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/goal/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game_manager/GameManager.gd" type="Script" id=7]
+[ext_resource path="res://files-godot-project/assets-do-curso-pong-na-godot-4-main/arquivos/assets/fonte/PublicPixel-z84yD.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 8 )
+
+[node name="Main" type="Node2D"]
+
+[node name="field" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 1 )
+
+[node name="midLine" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+scale = Vector2( 0.5, 5.5 )
+texture = ExtResource( 2 )
+
+[node name="player1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64, 360 )
+player1 = true
+
+[node name="player2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1216, 360 )
+
+[node name="Ball" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 360 )
+
+[node name="GameManager" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 7 )
+
+[node name="Goal1" parent="." instance=ExtResource( 6 )]
+position = Vector2( -72, 0 )
+
+[node name="Goal2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1344, 0 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScorePanel" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextScorePlayer1" type="Label" parent="UI/ScorePanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -208.0
+margin_top = 64.0
+margin_right = -158.0
+margin_bottom = 114.0
+rect_scale = Vector2( 0.896729, 1.28524 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextScorePlayer2" type="Label" parent="UI/ScorePanel"]
+margin_left = 808.0
+margin_top = 64.0
+margin_right = 858.0
+margin_bottom = 114.0
+rect_scale = Vector2( 0.907685, 1.33626 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[connection signal="area_entered" from="Goal1" to="GameManager" method="_on_Goal1_area_entered"]
+[connection signal="area_entered" from="Goal2" to="GameManager" method="_on_Goal2_area_entered"]

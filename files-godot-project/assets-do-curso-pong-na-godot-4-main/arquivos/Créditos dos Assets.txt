@@ -1,0 +1,10 @@
+Este pack contém os assets utilizados no curso "Pong na Godot 4" (nome provisório), do canal Desenvolvendo Jogos.
+
+Todos os sprites e efeitos sonoros foram feitos por mim, e você pode utilizá-los da maneira que quiser :)
+
+A fonte utilizada é a "Public Pixel Font", por "GGBotNet".
+[ https://www.fontspace.com/public-pixel-font-f72305 ]
+
+Bons estudos!
+
+V1.0

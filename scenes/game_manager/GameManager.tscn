@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://files-godot-project/assets-do-curso-pong-na-godot-4-main/arquivos/assets/sons/impacto-gol.wav" type="AudioStream" id=1]
+
+[node name="GameManager" type="Node2D"]
+
+[node name="impactGoal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )

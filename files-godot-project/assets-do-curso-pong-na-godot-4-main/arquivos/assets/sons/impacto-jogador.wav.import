@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/impacto-jogador.wav-cef4da494d610354fb6fc780befb5f4d.sample"
+
+[deps]
+
+source_file="res://files-godot-project/assets-do-curso-pong-na-godot-4-main/arquivos/assets/sons/impacto-jogador.wav"
+dest_files=[ "res://.import/impacto-jogador.wav-cef4da494d610354fb6fc780befb5f4d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
